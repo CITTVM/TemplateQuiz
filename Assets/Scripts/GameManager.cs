@@ -11,6 +11,15 @@ public class GameManager : MonoBehaviour {
 	private Pregunta preguntaActual;
 	private static List<Pregunta> preguntasSinResponder;
 
+	public Sacramento[] sacramentos;
+	public Sacramento sacramentoActual;
+	private static List<Sacramento> sacramentosEscogidos;
+
+	public static int puntos = 0;
+
+	[SerializeField]
+	private static int dificultad;//Dificultad de la instancia de juego.
+
 	[SerializeField]
 	private Text textoPregunta;
 
@@ -68,6 +77,7 @@ public class GameManager : MonoBehaviour {
 		animator.SetTrigger ("Verdadero");
 		if (preguntaActual.esVerdad) {
 			cheer.Play ();
+			puntos++;
 		} else {
 			boo.Play ();
 		}
@@ -78,9 +88,15 @@ public class GameManager : MonoBehaviour {
 		animator.SetTrigger ("Falso");
 		if (!preguntaActual.esVerdad) {
 			cheer.Play ();
+			puntos++;
 		} else {
 			boo.Play ();
 		}
 		StartCoroutine (TransicionEntrePreguntas());
+	}
+
+	public void ObtenerSacramentoAleatorio () {
+		int indiceSacramentoAleatorio = Random.Range (0, sacramentosEscogidos.Count);
+		sacramentoActual = sacramentosEscogidos [indiceSacramentoAleatorio];
 	}
 }
