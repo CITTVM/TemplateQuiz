@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour {
 	private static List<Pregunta> preguntasSinResponder;
 
 	public Sacramento[] sacramentos;
-	public Sacramento sacramentoActual;
+	private Sacramento sacramentoActual;
 	private static List<Sacramento> sacramentosEscogidos;
 
 	public static int puntos = 0;
 
 	[SerializeField]
-	private static int dificultad;//Dificultad de la instancia de juego.
+	private static int dificultadEscogida;//Dificultad de la instancia de juego.
 
 	[SerializeField]
 	private Text textoPregunta;
@@ -99,4 +99,26 @@ public class GameManager : MonoBehaviour {
 		int indiceSacramentoAleatorio = Random.Range (0, sacramentosEscogidos.Count);
 		sacramentoActual = sacramentosEscogidos [indiceSacramentoAleatorio];
 	}
+
+    public void setDificultadEscogida(int id)
+    {
+        dificultadEscogida = id;
+    }
+
+    /**public void seleccionadorPreguntas()
+    {
+        switch (dificultadEscogida)
+        {
+            case 0:
+                ObtenerSacramentoAleatorio();
+                Sacramento sacramentoLocal = sacramentoActual;
+                
+
+                break;
+            case 1:
+
+            case 2:
+
+        }
+    }*/
 }
