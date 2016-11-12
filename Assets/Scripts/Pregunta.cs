@@ -5,4 +5,8 @@ public class Pregunta {
 	public bool esVerdad;
     [SerializeField]
     private int idSacramento;
+
+	/**public int getSacramento {
+		get;
+	}*/
 }

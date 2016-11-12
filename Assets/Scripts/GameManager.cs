@@ -11,10 +11,6 @@ public class GameManager : MonoBehaviour {
 	private Pregunta preguntaActual;
 	private static List<Pregunta> preguntasSinResponder;
 
-	public Sacramento[] sacramentos;
-	private Sacramento sacramentoActual;
-	private static List<Sacramento> sacramentosEscogidos;
-
 	public static int puntos = 0;
 
 	[SerializeField]
@@ -95,30 +91,20 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine (TransicionEntrePreguntas());
 	}
 
-	public void ObtenerSacramentoAleatorio () {
+	/**public void ObtenerSacramentoAleatorio () {
 		int indiceSacramentoAleatorio = Random.Range (0, sacramentosEscogidos.Count);
 		sacramentoActual = sacramentosEscogidos [indiceSacramentoAleatorio];
 	}
+
+	public void sacarPreguntas () {
+		Sacramento sacramentoElegido = sacramentosEscogidos.FirstOrDefault ();
+		sacramentosEscogidos.Remove (sacramentoElegido);
+
+
+	}*/
 
     public void setDificultadEscogida(int id)
     {
         dificultadEscogida = id;
     }
-
-    /**public void seleccionadorPreguntas()
-    {
-        switch (dificultadEscogida)
-        {
-            case 0:
-                ObtenerSacramentoAleatorio();
-                Sacramento sacramentoLocal = sacramentoActual;
-                
-
-                break;
-            case 1:
-
-            case 2:
-
-        }
-    }*/
 }
