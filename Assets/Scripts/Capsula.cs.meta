@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 guid: 5c3d8535d54f5ae4b8a9573f22271d99
-timeCreated: 1478986444
+timeCreated: 1479090533
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sacramento1: {fileID: 15200000, guid: d1285fc87d2cc314bb93e2e22d050e26, type: 3}
+  - sacramento2: {fileID: 15200000, guid: 3c98bf45749144e4cb8faef260ec6934, type: 3}
+  - sacramento3: {fileID: 15200000, guid: d747653f667031b488a400dcca9c2b86, type: 3}
+  - sacramento4: {fileID: 15200000, guid: 63d7dd16749c46840807d550166549be, type: 3}
+  - sacramento5: {fileID: 15200000, guid: 335df1d997b740545ac0915392c17d2f, type: 3}
+  - sacramento6: {fileID: 15200000, guid: c8b5465ee56298243a992cff54261330, type: 3}
+  - sacramento7: {fileID: 15200000, guid: 7a31451cf65ab60488226be043f4db92, type: 3}
+  - dificultad: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
