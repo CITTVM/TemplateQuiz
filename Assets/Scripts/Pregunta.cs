@@ -6,7 +6,8 @@ public class Pregunta {
     [SerializeField]
     private int idSacramento;
 
-	/**public int getSacramento {
-		get;
-	}*/
+	public int getIdSacramento() {
+		return idSacramento;
+	}
+	
 }
