@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
 		if (dificultad.getListaSacramentos().Count == 0) {
 			SceneManager.LoadScene ("PantallaPuntaje");
 		}
-		if (dificultad.getSacramentoActual().getRestantes() == 0) {
+		if (dificultad.getSacramentoActual().getRestantes() == 0 && dificultad.getListaSacramentos().Count != 0) {
 			dificultad.getListaSacramentos ().Remove (dificultad.getSacramentoActual());
 			dificultad.setSacramentoActual (dificultad.getListaSacramentos().FirstOrDefault());
 			SceneManager.LoadScene ("PantallaCapsula");
@@ -65,8 +65,9 @@ public class GameManager : MonoBehaviour {
 			
 		foreach (var pregunta in preguntasSinResponder) {
 			if (dificultad.getSacramentoActual().getId() == pregunta.getIdSacramento()) {
-				int indicePreguntaAleatorio = Random.Range (0, preguntasSinResponder.Count);
-				preguntaActual = preguntasSinResponder [indicePreguntaAleatorio];
+				//int indicePreguntaAleatorio = Random.Range (0, preguntasSinResponder.Count);
+				//preguntaActual = preguntasSinResponder [indicePreguntaAleatorio];
+				preguntaActual = pregunta;
 				break;
 			}
 		}
