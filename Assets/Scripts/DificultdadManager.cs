@@ -89,6 +89,10 @@ public class DificultdadManager : MonoBehaviour {
 		return puntos;
 	}
 
+	public void aumentarPuntos(){
+		puntos++;
+	}
+
 	public void armarListasPreguntas () {
 		int cantidadPreguntas = 0;
 

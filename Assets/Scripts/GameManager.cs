@@ -95,7 +95,8 @@ public class GameManager : MonoBehaviour {
 		animator.SetTrigger ("Verdadero");
 		if (preguntaActual.esVerdad) {
 			cheer.Play ();
-			puntos++;
+			//puntos++;
+			dificultad.aumentarPuntos();
 		} else {
 			boo.Play ();
 		}
@@ -106,7 +107,8 @@ public class GameManager : MonoBehaviour {
 		animator.SetTrigger ("Falso");
 		if (!preguntaActual.esVerdad) {
 			cheer.Play ();
-			puntos++;
+			//puntos++;
+			dificultad.aumentarPuntos();
 		} else {
 			boo.Play ();
 		}
