@@ -46,7 +46,8 @@ public class GameManager : MonoBehaviour {
 	void Start() {
 
 		if (preguntasSinResponder == null || preguntasSinResponder.Count == 0) {
-			preguntasSinResponder = preguntas.ToList<Pregunta> ();
+			//preguntasSinResponder = preguntas.ToList<Pregunta> ();
+			preguntasSinResponder = shuffle(preguntas).ToList<Pregunta> ();
 		}
 
 		ObtenerPreguntaAleatoria ();
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour {
 
 	void ObtenerPreguntaAleatoria() {
 		if (dificultad.getListaSacramentos().Count == 0) {
+			preguntasSinResponder = null;
 			SceneManager.LoadScene ("PantallaPuntaje");
 		}
 		if (dificultad.getSacramentoActual().getRestantes() == 0 && dificultad.getListaSacramentos().Count != 0) {
@@ -129,4 +131,17 @@ public class GameManager : MonoBehaviour {
     {
         dificultadEscogida = id;
     }
+
+	Pregunta[] shuffle(Pregunta[] preguntas)
+	{
+		// Knuth shuffle algorithm
+		for (int t = 0; t < preguntas.Length; t++ )
+		{
+			Pregunta tmp = preguntas[t];
+			int r = Random.Range(t, preguntas.Length);
+			preguntas[t] = preguntas[r];
+			preguntas[r] = tmp;
+		}
+		return preguntas;
+	}
 }
