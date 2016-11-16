@@ -1,5 +1,13 @@
-﻿[System.Serializable]
+﻿using UnityEngine;
+[System.Serializable]
 public class Pregunta {
 	public string hecho;
 	public bool esVerdad;
+    [SerializeField]
+    private int idSacramento;
+
+	public int getIdSacramento() {
+		return idSacramento;
+	}
+	
 }
